@@ -9,7 +9,7 @@ function generateTaskId() {
 
 // Todo: create a function to create a task card
 function createTaskCard(task) {
-
+edj3jbdbd3bdjdbb
 }
 
 // Todo: create a function to render the task list and make cards draggable
