@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
 
-  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="./style.css" />
   <title>Task Board</title>
 </head>
 
@@ -25,8 +25,13 @@
       <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formModal">Add Task</button>
     </div>
     <!-- Todo: Create a modal with a form to add tasks -->
+    <form id="taskForm">
+      <label for="taskName">Task Name:</label><br>
+      <input type="text" id="taskName" name="taskName" required><br>
+      <button type="submit">Add</button>
+  </form>
     <div class="row swim-lanes text-center justify-content-between">
-      <div class="col-12 col-lg-4 d-flex">
+      <div class="col-4 col-lg-4 d-flex">
         <div id="to-do" class="card border-light mb-3 lane flex-grow-1">
           <div class="card-header bg-white">
             <h2 class="card-title mb-1">To Do</h2>
@@ -36,7 +41,7 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg-4 d-flex">
+      <div class="col-4 col-lg-4 d-flex">
         <div id="in-progress" class="card border-light mb-3 lane flex-grow-1">
           <div class="card-header bg-white">
             <h2 class="card-title mb-1">In Progress</h2>
@@ -46,7 +51,7 @@
           </div>
         </div>
         </div>
-        <div class="col-12 col-lg-4 d-flex">
+        <div class="col-4 col-lg-4 d-flex">
           <div id="done" class="card border-light mb-3 lane flex-grow-1">
             <div class="card-header bg-white">
               <h2 class="card-title mb-1">Done</h2>
@@ -67,7 +72,7 @@
   <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
     integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
 
-  <script src="./assets/js/script.js"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>
