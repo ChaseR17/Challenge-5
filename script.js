@@ -35,54 +35,38 @@ function renderTaskList() {
          //title = card-header
          //description = card-body
          //deadline = card-text 
+         const cardHeader = document.getElementById("cardHeader")
+         const cardTitle = document.getElementById("cardTitle")
+         const cardText = document.getElementById("cardText")
 
+         const cardLocalStorage = JSON.parse(localStorage.getItem("tasks"))
+         console.log(cardLocalStorage[0].title)
+
+         cardHeader.textContent = cardLocalStorage[0].title
+         cardTitle.textContent = cardLocalStorage[0].description
+         cardText.textContent = cardLocalStorage[0].deadline
+         
+      
+        $( ".draggable" ).draggable();
+
+         
+         
+         const cardContainer = document.getElementById("cardContainer");
+         cardContainer.innerHTML = ""; // Clear existing cards
+         tasks.forEach(task => {
+             const card = document.createElement("div");
+             card.classList.add("card");
+             card.innerHTML = `
+                 <div class="card-header">${task.title}</div>
+                 <div class="card-body">${task.description}</div>
+                 <div class="card-text">${task.deadline}</div>
+             `;
+             cardContainer.appendChild(card);
+         });
 }
 
-// Retrieve tasks from localStorage
-let taskList = JSON.parse(localStorage.getItem("tasks")) || [];
 
-// Render the task list when the page loads
-document.addEventListener("", renderTaskList);
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ 
 
 
 // Todo: create a function to handle adding a new task
@@ -104,8 +88,6 @@ tasks.push(task);
    renderTaskList()
     
 }
-
-
 
 
 // Todo: create a function to handle deleting a task
